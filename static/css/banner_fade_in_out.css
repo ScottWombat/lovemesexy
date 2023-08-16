@@ -1,0 +1,57 @@
+.bg-anime {
+    height: 100vh;
+    position: relative;
+  }
+  .bg-anime__item {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background: center/cover;
+  }
+  .bg-anime__item:nth-of-type(1) {
+    z-index: 2;
+    background-image: url('../images/slide1_1.jpg');
+    animation: fade01 20s infinite;
+  }
+  .bg-anime__item:nth-of-type(2) {
+    z-index: 1;
+    background-image: url('../images/slide2_2.jpg');
+    opacity: 0;
+    animation: fade02 20s infinite;
+  }
+  
+  @keyframes fade01 {
+    0% {
+      opacity: 1;
+    }
+    35% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    85% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade02 {
+    0% {
+      opacity: 0;
+    }
+    35% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

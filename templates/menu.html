@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <link href="{{ url_for('static', path='/splash.css') }}" rel="stylesheet">
+ 
+    <script>
+        function showMsg(msg) {
+            window.location.href= "/main"
+        }
+    </script>
+</header>
+
+<body>
+    
+    <div id="container">
+        <div class="slide anim-in" onclick="showMsg('j')">
+            <div class="image"
+                style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/venice.jpg);"></div>
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="emblem"
+                    style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/italian-emblem.svg);">
+                </div>
+                <h1 class="info">shopHim</h1>
+            </div>
+            <div class="btn-close"></div>
+        </div>
+        <div class="slide anim-in">
+            <div class="image"
+                style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/paris.jpg);"></div>
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="emblem"
+                    style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/french-emblem.svg);">
+                </div>
+                <h1 class="info">shopHer</h1>
+            </div>
+            <div class="btn-close"></div>
+        </div>
+        <div class="slide anim-in">
+            <div class="image"
+                style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/salzburg.jpg);"></div>
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="emblem"
+                    style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/austrian-emblem.svg);">
+                </div>
+                <h1 class="info">shopGay</h1>
+            </div>
+            <div class="btn-close"></div>
+        </div>
+        <div class='breadcrumb-div'>
+            <div class="toolbar">
+                <div class="search-wrapper">
+                    <input type="search" placeholder="Search for photos">
+                    <div class="counter">
+                      Total photos: <span>12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

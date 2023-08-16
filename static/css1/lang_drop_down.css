@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+.languages {
+    font-family: 'Good Times Rg';
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+    padding-left: 20px;
+    color:black;
+}
+
+.languages:after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 25px;
+    margin-left: -5px;
+    border-top: 4px solid black;
+    border-top-color: #ccc;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    z-index: 1;
+}
+
+.languages .hover {
+    background: #e5e5e5;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    display: block;
+    margin-right: 5px;
+    padding: 0 5px;
+    line-height: 23px;
+}
+
+.languages .current {
+    display: inline-block;
+    padding: 0 20px 0 6px;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.languages ul {
+    background: #e5e5e5;
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 3px 0;
+    list-style: none;
+    font-size: 13px;
+    top: 100%;
+}
+
+.languages ul a {
+    text-decoration: none;
+    padding: 0px 10px 0 10px;
+    display: inline-block;
+    color: #333;
+}
+
+.languages ul a.sel {
+    color: #ccc;
+}
+
+.languages ul a.sel:hover {
+    color: #ccc;
+}
+
+.languages ul a:hover {
+    color: #000;
+}
+
+.languages:hover .hover {
+    display: inline-block;
+}
+
+.languages:hover:after {
+    border-top-color: #000;
+}
+.img_id{
+    float: left;
+    margin-top:3px;
+    margin-right: 10px
+}
+.lang{
+    float: left;
+}
+

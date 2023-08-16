@@ -1,0 +1,16 @@
+[
+    {
+        "catalog_id": "flashlights",
+        "name": "product1",
+        "price": 123.50,
+        "created_at": "fdd",
+        "updated_at": "::"
+    },
+    {
+        "catalog_id": "flashlights",
+        "name": "product2",
+        "price": 1443.50,
+        "created_at": "fdd",
+        "updated_at": "::"
+    }
+]

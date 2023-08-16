@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "lovemesexy"
+version = "0.1.0"
+description = ""
+authors = ["ScottWombat <scott.wombat@gmail.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.23.1"
+fastapi = "^0.100.0"
+motor =  "^3.2.0"
+python-multipart = "^0.0.6"
+pydantic = "^2.0.3"
+jinja2 = "^3.1.2"
+sqlalchemy = "^2.0.19"
+click = "^8.1.6"
+python-dotenv= "^1.0.0"
+psutil="^5.9.5"
+pytz = "^2023.3"
+
+[tool.poetry.scripts]
+run_hello = "app.utils.commands:hello"
+run_upload1 = "app.utils.commands:mongodb_bulk_upload"
+run_upload = "app.utils.commands:upload"
+db-query = "app.utils.commands:mongodb_query"
+find_all = "app.utils.commands:mongodb_find_all"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

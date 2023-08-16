@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="{{ url_for('static', path='/css1/main.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+
+    <link id="favicon" rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <script src="{{ url_for('static', path='/js/drop_down.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/mega_menu.js') }}"></script>
+    <style>
+        #imgContainer {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #imgContainer .motiv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+        }
+
+        .motiv h1 {
+            margin: 0;
+            padding-left: 50px;
+            font-size: 130px;
+            font-family: sans-serif;
+            line-height: 100vh;
+            color: #909090;
+            position: absolute;
+        }
+
+
+        .motiv img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 130%;
+        }
+
+        .slide_cart {
+            background-color: blue;
+        }
+
+        .close_navigation {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            cursor: pointer;
+        }
+
+        #example1 {
+        
+            background: url('static/images/slide1_1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 400px;
+        }
+    </style>
+    <script>
+        $(function () {
+            console.log("ready!");
+            var navwidth = ($(".slide_cart").width());
+            $(".shopping_cart").on("mouseover", function () {
+                $(".slide_cart").fadeIn(0).animate({ marginRight: "0px" }, 370),
+                    $(".close_navigation").fadeIn(500);
+
+            });
+            $(".shopping_cart").on("mouseover", function () {
+                console.log("ddddd")
+            });
+
+            $(".close_navigation").click(function () {
+                var navwidth = ($(".slide_cart").width());
+                $(".slide_cart").animate({ marginRight: - navwidth }, 370).fadeOut(1000);
+            });
+        });
+        window.onload = (event) => {
+            gsap.set('.motiv img', { xPercent: -50, yPercent: -50 })
+
+            const imgs = gsap.utils.toArray("#imgContainer .motiv");
+            const next = 15; // time to change
+            const fade = 2.5; // fade time 
+
+
+
+            gsap.set(imgs[0], { autoAlpha: 1 })
+
+            //tl.to(outer, 3, {xPercent: 0, force3D: true,ease:Sine.easeInOut }, 0)
+
+
+            function crossfade() {
+
+                //split = new SplitText(imgs[1], { type: "chars" });
+                //chars = split.chars;
+
+                const action = gsap.timeline()
+                    .to(imgs[0], { autoAlpha: 0, duration: fade })
+                    .to(imgs[1], { autoAlpha: 1, duration: fade }, 0);
+
+
+
+                imgs.push(imgs.shift());
+
+                gsap.delayedCall(next, crossfade);
+            }
+
+
+            gsap.delayedCall(next, crossfade);
+
+        }
+    </script>
+</header>
+
+<body>
+    <div class="slide_cart">
+
+        <div class="close_navigation">
+            <div style="font-size:20px;">Close</div>
+        </div>
+        <div style="position:relative">
+            fffff
+        </div>
+
+    </div>
+    <div class="holy-grail-grid">
+        <div class="free-shipping">
+            <div class="bandeau">
+                <p class="banner-body">
+                    <img
+                        src="data:image/png;base64,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">
+                    <span class="bandeau-new">New!</span>
+                    <span class="bandeau-text">Delivery fees offered during your first order</span>
+                </p>
+            </div>
+        </div>
+        <div class="top-menu">
+            <div class="languages">
+                <span>LANGUAGE</span>
+                <span class="current" title="English" style="width:120px">
+                    <img class="img_id" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/19554/flag-icon-us.gif"
+                        alt="" />
+                    <div>English</div>
+                </span>
+
+                <ul style="margin-left:85px;width:150px">
+                    <li>
+                        <img style="margin-left:6px"
+                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/19554/flag-icon-us.gif" alt="" />
+                        <a href="#">English</a>
+                    </li>
+                    <li>
+                        <img style="margin-left:6px"
+                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/19554/flag-icon-us.gif" alt="" />
+                        <a href="#">Hindi</a>
+                    </li>
+                    <li>
+                        <img style="margin-left:6px"
+                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/19554/flag-icon-us.gif" alt="" />
+                        <a href="#">Tamil</a>
+                    </li>
+                    <li>
+                        <img style="margin-left:6px"
+                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/19554/flag-icon-us.gif" alt="" />
+                        <a href="#">Kannada</a>
+                    </li>
+                    <li>
+                        <img style="margin-left:6px"
+                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/19554/flag-icon-us.gif" alt="" />
+                        <a href="#">Gujarathi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-menu">
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#">SAVE ITEMS&nbsp;<i class="far fa-heart"></i></a></li>
+                    <li><a href="#">ACCOUNT&nbsp; <i class="far fa-user" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="shopping_cart">CART&nbsp;<span class="material-symbols-outlined"
+                                style="vertical-align: -6px;">shopping_cart</span></a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="header">
+            <span class="logo">
+                l<i class="fa fa-heart" style="color:red" aria-hidden="true"></i>ve me sexy
+            </span>
+        </div>
+        <div class="search-box">
+
+            <div class="wrapper">
+                <div class="searchBar">
+                    <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" value="" />
+                    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="#666666"
+                                d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- menu -->
+        <header class="nav-menu">
+
+            <nav class="main_nav">
+
+                <div class="menuContainer">
+                    <!-- desktop menu -->
+                    <nav class="menu">
+                        <ul>
+                            <li> <a href="#" class="menuLink">Shop</a> </li>
+                            <li class="hasMegaMenu"> <a href="#" class="menuLink">Female</a>
+                                <!-- healthcare professionals -->
+                                <div class="megaMenu">
+                                    <div class="bs_row bs_top">
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Surgeons / Clinicians</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">Innovative Design</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">OR Staff</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">Training &amp; Support</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Hospitals / Payors</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">Why Intuitive</a></p>
+                                                <p><a href="#">Executive Events</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Specialties</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">Gynecology</a></p>
+                                                <p><a href="#">Urology</a></p>
+                                                <p><a href="#">Thoracic</a></p>
+                                                <p><a href="#">Head &amp; Neck</a></p>
+                                                <p><a href="#">Cardiac</a></p>
+                                                <p><a href="#">Colorectal</a></p>
+                                                <p><a href="#">General Surgery</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Products</p>
+                                                <p><a href="#">Surgical</a></p>
+                                                <p><a href="#">Diagnostic</a></p>
+                                                <p><a href="#">Imaging</a></p>
+                                                <p class="bs_margin"><a href="#">Simulation</a></p>
+                                                <p class="megaMenuHeading">Training</p>
+                                                <p><a href="#">Clinical Training</a></p>
+                                                <p><a href="#">Technology Pathway Training</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Courses &amp; Events</p>
+                                                <p><a href="#">Events</a></p>
+                                                <p class="bs_margin"><a href="#">Executive Education</a></p>
+                                                <p class="megaMenuHeading bs_margin">Services</p>
+                                                <p class="megaMenuHeading">Support</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="hasMegaMenu"> <a href="#" class="menuLink">Male</a>
+
+                                <!-- Patients -->
+                                <div class="megaMenu">
+                                    <div class="bs_row bs_top">
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Why Intuitive</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">Minimally Invasive Surgery</a></p>
+                                                <p><a href="#">FAQs</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_two bs_right">
+                                            <p><img src="http://placehold.it/600x300" /></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="hasMegaMenu"> <a href="#" class="menuLink">Bondage</a>
+
+                                <!-- about us -->
+                                <div class="megaMenu">
+                                    <div class="bs_row bs_top">
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Our Purpose</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">The Surgical Design Company</a></p>
+                                                <p class="bs_margin"><a href="#">Management Team</a></p>
+                                                <p class="megaMenuHeading">Leadership</p>
+                                                <p><a href="#">Leadership Board</a></p>
+                                                <p><a href="#">Management Team</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Careers</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">Why Intuitive</a></p>
+                                                <p><a href="#">Benefits</a></p>
+                                                <p><a href="#">Diversity &amp; Social Responsibility</a></p>
+                                                <p><a href="#">Career Profiles</a></p>
+                                                <p><a href="#">Jon Opportunities</a></p>
+                                                <p><a href="#">Internships</a></p>
+                                                <p><a href="#">Co-ops</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Media</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">Statements</a></p>
+                                                <p><a href="#">Press Releases</a></p>
+                                                <p><a href="#">Media Contact</a></p>
+                                                <p><a href="#">Media Kit</a></p>
+                                                <p><a href="#">Video Library</a></p>
+                                                <p><a href="#">Image Library</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Investors</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">Stock Information</a></p>
+                                                <p><a href="#">SEC Filings</a></p>
+                                                <p><a href="#">Analytics</a></p>
+                                                <p><a href="#">Investor FAQ</a></p>
+                                                <p><a href="#">Event Calendar</a></p>
+                                                <p><a href="#">Audio Archives</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="bs_one">
+                                            <div>
+                                                <p class="megaMenuHeading">Locations</p>
+                                                <p><img src="http://placehold.it/200x100" /></p>
+                                                <p><a href="#">Locations &amp; Representation</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> <a href="#" class="menuLink">Realistic Butts</a> </li>
+                            <li> <a href="#" class="menuLink">Erotic Wear</a> </li>
+                            <li> <a href="#" class="menuLink">Sexual Health</a> </li>
+                            <li> <a href="#" class="menuLink">Sexual Accessories</a> </li>
+                            <li> <a href="#" class="menuLink">Sale</a> </li>
+                        </ul>
+                    </nav>
+                </div>
+        </header>
+        <main class="main-content" style="height:400px">
+            <div id="example1">
+                <h2>Hello World</h2>
+                <p>The background image is displayed in its original size.</p>
+            </div>
+        </main>
+        <!--
+        <footer class="footer">
+            <div class="sides">
+                <div class="logo1">BLOG</div>
+            </div>
+        </footer>
+        -->
+    </div>
+    <div id="slide_cart">
+        fffff
+    </div>
+</body>
+
+</html>

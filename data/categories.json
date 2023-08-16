@@ -1,0 +1,93 @@
+[
+    {
+        "_id": "accessories",
+        "name": "Accessories",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "anal_douches",
+        "name": "Anal Douches",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "anal_stimulators",
+        "name": "Anal stimulators",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "butt_Plugs",
+        "name": "Butt Plugs",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "cock_rings",
+        "name": "Cock Rings",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "penis_pumps",
+        "name": "Penis Pumps",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "prostate_massagers",
+        "name": "Prostate Massagers",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "sex_dolls",
+        "name": "Sex Dolls",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "sex_machines",
+        "name": "Sex Machines",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "sleeves_extensions",
+        "name": "Sleeves & Extensions",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "strokers",
+        "name": "Strokers",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "urethral",
+        "name": "Urethral",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "vibrating_masturbators",
+        "name": "Vibrating Masturbators",
+        "catalog_id": "sex_toys",
+        "created_at": "",
+        "updated_at": ""
+    }
+]

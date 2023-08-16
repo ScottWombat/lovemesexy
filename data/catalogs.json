@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "sex_toys",
+        "name": "Sex Toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "vibrators",
+        "name": "Vibrators",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "dildos",
+        "name": "Dildos",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "anal_toys",
+        "name": "Anal Toys",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "bondage",
+        "name": "Bondage",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "lube_essentials",
+        "name": "Lube & Essentials",
+        "created_at": "",
+        "updated_at": ""
+    },
+    {
+        "_id": "sexy_wear",
+        "name": "Sexy Wear",
+        "created_at": "",
+        "updated_at": ""
+    }
+]

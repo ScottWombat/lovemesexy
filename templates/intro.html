@@ -1,0 +1,858 @@
+<html>
+<header>
+    <style>
+        html {
+            box-shadow: inset 0 0 30px 0 #000;
+            min-height: 100%;
+        }
+
+        body {
+            background: #111;
+            color: #fff;
+            font-size: 1.8em;
+            font-family: "verdana", Courier, monospace;
+        }
+
+        div {
+            margin-top: 15%;
+            text-align: center;
+        }
+
+        span {
+            display: inline-block;
+            opacity: 0;
+            margin: 0;
+        }
+
+        span:nth-child(1) {
+            animation: flyin1 4s 1 forwards;
+        }
+
+        @keyframes flyin1 {
+            0% {
+                transform: translate(-83px, -211px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(2) {
+            animation: flyin2 4s 1 forwards;
+        }
+
+        @keyframes flyin2 {
+            0% {
+                transform: translate(-202px, -222px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(3) {
+            animation: flyin3 4s 1 forwards;
+        }
+
+        @keyframes flyin3 {
+            0% {
+                transform: translate(-111px, -154px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(4) {
+            animation: flyin4 4s 1 forwards;
+        }
+
+        @keyframes flyin4 {
+            0% {
+                transform: translate(-342px, 137px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(5) {
+            animation: flyin5 4s 1 forwards;
+        }
+
+        @keyframes flyin5 {
+            0% {
+                transform: translate(284px, 30px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(6) {
+            animation: flyin6 4s 1 forwards;
+        }
+
+        @keyframes flyin6 {
+            0% {
+                transform: translate(93px, 132px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(7) {
+            animation: flyin7 4s 1 forwards;
+        }
+
+        @keyframes flyin7 {
+            0% {
+                transform: translate(-308px, 127px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(8) {
+            animation: flyin8 4s 1 forwards;
+        }
+
+        @keyframes flyin8 {
+            0% {
+                transform: translate(212px, -295px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(9) {
+            animation: flyin9 4s 1 forwards;
+        }
+
+        @keyframes flyin9 {
+            0% {
+                transform: translate(194px, -162px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(10) {
+            animation: flyin10 4s 1 forwards;
+        }
+
+        @keyframes flyin10 {
+            0% {
+                transform: translate(54px, 346px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(11) {
+            animation: flyin11 4s 1 forwards;
+        }
+
+        @keyframes flyin11 {
+            0% {
+                transform: translate(-190px, 79px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(12) {
+            animation: flyin12 4s 1 forwards;
+        }
+
+        @keyframes flyin12 {
+            0% {
+                transform: translate(76px, 9px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(13) {
+            animation: flyin13 4s 1 forwards;
+        }
+
+        @keyframes flyin13 {
+            0% {
+                transform: translate(198px, 349px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(14) {
+            animation: flyin14 4s 1 forwards;
+        }
+
+        @keyframes flyin14 {
+            0% {
+                transform: translate(327px, 112px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(15) {
+            animation: flyin15 4s 1 forwards;
+        }
+
+        @keyframes flyin15 {
+            0% {
+                transform: translate(199px, -155px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(16) {
+            animation: flyin16 4s 1 forwards;
+        }
+
+        @keyframes flyin16 {
+            0% {
+                transform: translate(210px, -128px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(17) {
+            animation: flyin17 4s 1 forwards;
+        }
+
+        @keyframes flyin17 {
+            0% {
+                transform: translate(100px, -230px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(18) {
+            animation: flyin18 4s 1 forwards;
+        }
+
+        @keyframes flyin18 {
+            0% {
+                transform: translate(281px, -297px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(19) {
+            animation: flyin19 4s 1 forwards;
+        }
+
+        @keyframes flyin19 {
+            0% {
+                transform: translate(-6px, -232px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(20) {
+            animation: flyin20 4s 1 forwards;
+        }
+
+        @keyframes flyin20 {
+            0% {
+                transform: translate(-157px, -277px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(21) {
+            animation: flyin21 4s 1 forwards;
+        }
+
+        @keyframes flyin21 {
+            0% {
+                transform: translate(79px, 268px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(22) {
+            animation: flyin22 4s 1 forwards;
+        }
+
+        @keyframes flyin22 {
+            0% {
+                transform: translate(-224px, 88px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(23) {
+            animation: flyin23 4s 1 forwards;
+        }
+
+        @keyframes flyin23 {
+            0% {
+                transform: translate(-232px, -75px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(24) {
+            animation: flyin24 4s 1 forwards;
+        }
+
+        @keyframes flyin24 {
+            0% {
+                transform: translate(-273px, -69px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(25) {
+            animation: flyin25 4s 1 forwards;
+        }
+
+        @keyframes flyin25 {
+            0% {
+                transform: translate(-87px, 219px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(26) {
+            animation: flyin26 4s 1 forwards;
+        }
+
+        @keyframes flyin26 {
+            0% {
+                transform: translate(20px, -42px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(27) {
+            animation: flyin27 4s 1 forwards;
+        }
+
+        @keyframes flyin27 {
+            0% {
+                transform: translate(-219px, -335px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(28) {
+            animation: flyin28 4s 1 forwards;
+        }
+
+        @keyframes flyin28 {
+            0% {
+                transform: translate(70px, 74px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(29) {
+            animation: flyin29 4s 1 forwards;
+        }
+
+        @keyframes flyin29 {
+            0% {
+                transform: translate(-184px, 75px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(30) {
+            animation: flyin30 4s 1 forwards;
+        }
+
+        @keyframes flyin30 {
+            0% {
+                transform: translate(-191px, 171px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(31) {
+            animation: flyin31 4s 1 forwards;
+        }
+
+        @keyframes flyin31 {
+            0% {
+                transform: translate(-122px, -201px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(32) {
+            animation: flyin32 4s 1 forwards;
+        }
+
+        @keyframes flyin32 {
+            0% {
+                transform: translate(-48px, 333px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(33) {
+            animation: flyin33 4s 1 forwards;
+        }
+
+        @keyframes flyin33 {
+            0% {
+                transform: translate(65px, 205px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(34) {
+            animation: flyin34 4s 1 forwards;
+        }
+
+        @keyframes flyin34 {
+            0% {
+                transform: translate(320px, 294px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(35) {
+            animation: flyin35 4s 1 forwards;
+        }
+
+        @keyframes flyin35 {
+            0% {
+                transform: translate(-311px, 227px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(36) {
+            animation: flyin36 4s 1 forwards;
+        }
+
+        @keyframes flyin36 {
+            0% {
+                transform: translate(72px, -229px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(37) {
+            animation: flyin37 4s 1 forwards;
+        }
+
+        @keyframes flyin37 {
+            0% {
+                transform: translate(-84px, -141px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(38) {
+            animation: flyin38 4s 1 forwards;
+        }
+
+        @keyframes flyin38 {
+            0% {
+                transform: translate(-83px, 53px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(39) {
+            animation: flyin39 4s 1 forwards;
+        }
+
+        @keyframes flyin39 {
+            0% {
+                transform: translate(265px, -253px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(40) {
+            animation: flyin40 4s 1 forwards;
+        }
+
+        @keyframes flyin40 {
+            0% {
+                transform: translate(198px, -245px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        span:nth-child(41) {
+            animation: flyin41 4s 1 forwards;
+        }
+
+        @keyframes flyin41 {
+            0% {
+                transform: translate(136px, -185px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+        span:nth-child(42) {
+            animation: flyin42 4s 1 forwards;
+        }
+
+        @keyframes flyin42 {
+            0% {
+                transform: translate(106px, -285px);
+            }
+
+            25% {
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        var url ='/menu';
+        var delay = 4;
+        var d = delay * 2000;window.setTimeout ('parent.location.replace(url)', d);
+    </script>
+</header>
+
+<body>
+    <div>
+        <span>O</span><span>u</span><span>r</span>
+
+        <span>w</span><span>o</span><span>r</span><span>d</span><span>s</span>
+
+        <span>h</span><span>a</span><span>v</span><span>e</span>
+
+        <span>w</span><span>i</span><span>n</span><span>g</span><span>s</span><span>,</span>
+        <br>
+        <span>b</span><span>u</span><span>t</span>
+
+        <span>f</span><span>l</span><span>y</span>
+
+        <span>n</span><span>o</span><span>t</span>
+
+        <span>w</span><span>h</span><span>e</span><span>r</span><span>e</span>
+
+        <span>w</span><span>e</span>
+
+        <span>w</span><span>o</span><span>u</span><span>l</span><span>d</span><span>.</span>
+        <br>
+        <span>O</span>
+        
+    </div>
+</body>
+
+</html>
