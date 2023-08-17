@@ -28,3 +28,6 @@ async def menu(request: Request):
 async def main_content(request: Request):
     return templates.TemplateResponse("content.html",{"request": request})
 
+@home_router.get("/imgtb",include_in_schema=False)
+async def main_content(request: Request):
+    return templates.TemplateResponse("imgtb.html",{"request": request})

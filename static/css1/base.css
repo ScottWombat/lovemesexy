@@ -7,19 +7,104 @@
 @import url("breadcrumb.css");
 @import url("image-thumbnails.css");
 @import url("footer.css");
+
 * {
-    margin: 0;
-    padding: 0;
-  }
-body {
-    font-family: "Good Times Rg";
-  }
-
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
+  margin: 0;
+  padding: 0;
 }
- 
+
+body {
+  font-family: "Good Times Rg";
+}
+
+
+.price-wrapper{
+  position: relative; 
+  display: inline-block;
+  margin-right:5px;
+}
+
+.price-slash{
+  position: relative;
+  width: 100%;
+  height: 0;
+  border-top: 2px solid red;
+  transform: rotate(-10deg);
+  top: 15px;
+}
+
+.price{ 
+  font-size: 18px;
+}
+
+.price-discount{ 
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.rating-box {
+  color: #f0f0f0;
+  margin: 0;
+  height: 1rem;
+  width: 9rem;
+}
+
+.rating-star {
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+  padding: 0 0.2rem;
+  position: relative;
+  display: block;
+  float: left;
+}
+/*   rating */
+.full-star:before {
+  color: #f2b01e;
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.empty-star:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.half-star:before {
+  color: #f2b01e;
+  content: "\2605";
+  width: 50%;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.half-star:after {
+  content: '\2605';
+  position: absolute;
+  left: 1.5rem;
+  width: 50%;
+  text-indent: -1.5rem;
+  overflow: hidden;
+}
+
+a.product-heart:hover{
+  cursor: pointer;
+  color: red;
+  fill: red;
+}
+
+.span-favorite{
+  font-size:24px;
+  color:black;
+  font-variation-settings: "FILL" 1;
+
+}
+
+
+
