@@ -23,6 +23,15 @@ def create_app() -> FastAPI:
         #dependencies=[Depends(Logging)],
         #middleware=make_middleware(),
     )
+    '''
+    app_.add_middleware(
+    CORSMiddleware,
+    allow_credentials = False,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+    )  
+    '''
     app_.add_event_handler("startup", connect_and_init_db)
     app_.add_event_handler("shutdown", close_db_connect)
 

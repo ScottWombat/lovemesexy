@@ -273,20 +273,6 @@ color:red;
 }
 
 
-.slide_cart{
-  position: fixed;
-  top: 0px; right: 0px;
-  display: none;
-  width: 400px;
-  height: 100%;
-  margin: 0;
-  margin-right: -400px;
-  padding: 150px 0 0;
-  background: #000000;
-  color: #ffffff;
-  list-style: none;
-  text-align: center;
-  z-index:100;
-}
+
 
 

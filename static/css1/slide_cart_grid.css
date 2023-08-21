@@ -1,0 +1,32 @@
+.slide_cart{
+    position: fixed;
+    top: 0px; right: 0px;
+    display: none;
+    width: 400px;
+    height: 100%;
+    margin: 0;
+    margin-right: -400px;
+    background: #fff;
+    color: #000;
+    z-index:100;
+  }
+
+.slide_cart_grid{
+    display:grid;
+    width:100%;
+    cursor: pointer;
+    background-color: aquamarine;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+        'slide_cart_title slide_cart_title slide_cart_title slide_cart_title slide_cart_close';
+
+} 
+
+.slide_cart_grid > .slide_cart_title{
+ 
+    grid-area:slide_cart_title;
+}
+.slide_cart_grid > .slide_cart_close{
+
+    grid-area:slide_cart_close;
+}

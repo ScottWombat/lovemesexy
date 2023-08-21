@@ -40,8 +40,9 @@
             <ol class="image-list grid-view">
               <li>
                 <figure>
+                  <a href="{{ url_for('product_info') }}">
                   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature1.jpg" alt="">
-                 
+                  </a>
                   <figcaption>
                     <div style="display:flex;">
                     <div>Green leafed trees</div><div style="margin-left:200px;color:red;font-weight: bold;">SALE</div>
@@ -64,7 +65,7 @@
                     </div>
                     <div style="float:right;">
                       <a class="product-heart"><span id="icon" class="material-symbols-outlined">&#xE87D;</span></a>
-                      <span class="material-symbols-outlined">&#xE854;</span>
+                      <span class="material-symbols-outlined" id="wrapper-addtocart">&#xE854;</span>
                     </div>
                     
                   </figcaption>

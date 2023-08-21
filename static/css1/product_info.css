@@ -1,0 +1,114 @@
+/* cart cart button */
+#wrapper-addtocart { 
+  float:right;
+  margin-right:20px;
+ 
+}
+#wrapper-addtocart:hover{
+  color:red;
+  cursor: pointer;
+}
+
+.button-solid {
+  border: none;
+}
+.button-solid:focus {
+  border: none;
+  outline: none;
+}
+
+
+
+.display_row{
+  display:inline-block;
+}
+img.product-m{
+  
+  padding:10px;
+  width:200px;
+  height: 200px;
+  
+}
+.product-info-grid {
+  display: grid;
+  width: 100%;
+  margin-top: 15px;
+  padding: 0;
+}
+
+/* desktop breakpoint */
+@media (min-width:1024px) {
+  .product-info-grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      'product_empty1 product_info product_info signed_in product_empty2';
+  }
+}
+
+.product-info-grid>.product_empty1 {
+  grid-area: product_empty1;
+}
+
+.product-info-grid>.product_info {
+  grid-area: product_info;
+
+
+}
+
+.product-info-grid>.signed_in {
+  grid-area: signed_in;
+  background-color: red;
+}
+
+.product-info-grid>.product_empty2 {
+  grid-area: product_empty2;
+}
+
+.product-details-grid {
+  display: grid;
+  width: 100%;
+  border-radius: 6px;
+  background-color:white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    'product-details-c0 product-details-c1 product-details-c1 product-details-c1';
+
+}
+
+.product-details-grid>.product-details-c0 {
+  grid-area: product-details-c0;
+  background-color: white;
+}
+
+.product-details-grid>.product-details-c1 {
+  padding:10px;
+  width:100%;
+  grid-area: product-details-c1;
+}
+
+.product-details-rows-grid{
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    'product-details-rows-1' 
+    'product-details-rows-2' 
+    'product-details-rows-3' 
+    'product-details-rows-4';
+
+}
+
+.product-details-rows-grid > product-details-rows-1{
+  grid-area: product-details-rows-1;
+}
+.product-details-rows-grid > product-details-rows-2{
+  grid-area: product-details-rows-2;
+}
+.product-details-rows-grid > product-details-rows-3{
+  grid-area: product-details-rows-3;
+}
+.product-details-rows-grid > product-details-rows-4{
+  grid-area: product-details-rows-4;
+}
+
+

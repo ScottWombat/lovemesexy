@@ -31,3 +31,8 @@ async def main_content(request: Request):
 @home_router.get("/imgtb",include_in_schema=False)
 async def main_content(request: Request):
     return templates.TemplateResponse("imgtb.html",{"request": request})
+
+
+@home_router.get("/product-info",include_in_schema=False)
+async def product_info(request: Request):
+    return templates.TemplateResponse("product-info.html",{"request": request})

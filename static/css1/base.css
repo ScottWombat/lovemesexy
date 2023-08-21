@@ -7,7 +7,9 @@
 @import url("breadcrumb.css");
 @import url("image-thumbnails.css");
 @import url("footer.css");
-
+@import url("product_info.css");
+@import url("toast.css");
+@import url("slide_cart_grid.css");
 * {
   margin: 0;
   padding: 0;
@@ -106,5 +108,40 @@ a.product-heart:hover{
 
 }
 
+/*
+shopping cart with counter
+*/
 
+.cart {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 28px;
+  height: auto;
+  overflow: hidden;
+}
+.cart .material-icons {
+  position: relative;
+  top: 4px;
+  z-index: 1;
+  font-size: 24px;
+  color: white;
+}
+.cart .count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  font-size: 11px;
+  border-radius: 50%;
+  background: #d60b28;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  display: block;
+  text-align: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
 
