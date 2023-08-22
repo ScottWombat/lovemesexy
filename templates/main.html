@@ -1,179 +1,230 @@
 {% extends "base.html" %}
+
 {% block content %}
+<div class="slide_cart">
+  <div class="slide_cart_container">
+    <div style="float:left;margin-left:15px;width:350px;">Cart&nbsp;(1 items)</div>
+    <div class="slide_cart_close">Close</div>
+
+    {% for j in range(5) %}
+    <div class="slide_cart_item">
+      <div style="float:left;width:60px;"><img style="width:50px;height:50px;padding:5px;"
+          src="static/images/products/E_1.jpg"></div>
+      <div style="float:left;margin-left:15px;width:100px;word-wrap: break-word;">Dildo hhhh hhhh hhhhh{{ j }}</div>
+      <div style="float:left;margin-left:15px;width:120px;">
+        <div class="quantity-field">
+          <button class="value-button decrease-button" onclick="decreaseValue(this)" title="Azalt">-</button>
+          <div class="number">1</div>
+          <button class="value-button increase-button" onclick="increaseValue(this, 5)" title="Arrtır">+
+          </button>
+        </div>
+      </div>
+      <div style="float:left;margin-left:15px;width:70px;">
+      <div class="price-wrapper">
+        <div class="price-slash"></div>
+        <div class="price">$300</div>
+      </div>
+      <div class="price-discount">$300</div>
+      </div>
+      <div style="float:left;margin-left:15px;width:25px;">
+        <span class="material-symbols-outlined" style="font-size: 2em;">
+          delete
+        </span>
+      </div>
+    </div>
+    {% endfor %}
+    <div style="margin-left:15px;margin-top:15px;width:450px;">
+    <div style="float:left;">Subtotoal - 5 Items </div><div style="float:right;">$600</div>
+    </div>
+    <div style="margin-left:15px;margin-top:15px;width:450px;">
+      <div style="float:left;">Shipping</div><div style="float:right;">$60</div>
+    </div>
+    <div style="margin-left:15px;margin-top:15px;width:450px;">
+        <div style="float:left;">GST included</div><div style="float:right;">$6</div>
+    </div>
+    <div style="margin-left:15px;margin-top:15px;width:450px;">
+      <div style="float:left;">TOTAL</div><div style="float:right;">$600</div>
+    </div>
+    <div style="position:relative;margin-left:15px;margin-top:50px;width:450px;">
+      <a href="#" class="checkout"><span class="s_checkout"></span>Checkout</a>
+    </div>
+  </div>
+</div>
 <div class="content-container">
 
-          <div class='breadcrumb-div'>
-              <ul class="arrows">
-                  <li><a href="#"><span class="material-symbols-outlined">&#xE88A;</span>Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Clients</a></li>
-                  <li><a href="#">Contact Us</a></li>
-              </ul>
-          </div>
-          <div class='breadcrumb-div'>Shop Bullet Vibrators</div>
-          <div class='breadcrumb-div'>
-              <div class="toolbar">
-                  <div class="search-wrapper">
-                      <input type="search" placeholder="Search for photos">
-                      <div class="counter">
-                        Total photos: <span>12</span>
-                      </div>
-                  </div>
-                  <ul class="view-options">
-                    <li class="zoom">
-                        <input type="range" min="180" max="380" value="280">
-                    </li>
-                    <li class="show-grid active">
-                        <button disabled>
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/grid-view.svg" alt="grid view">  
-                        </button>
-                    </li>
-                    <li class="show-list">
-                        <button>
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/list-view.svg" alt="list view">  
-                        </button>
-                    </li>
-                </ul>
-              </div><!--end toolbar-->
-          </div>
-          <div class='breadcrumb-div'>
-            <ol class="image-list grid-view">
-              <li>
-                <figure>
-                  <a href="{{ url_for('product_info') }}">
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature1.jpg" alt="">
-                  </a>
-                  <figcaption>
-                    <div style="display:flex;">
-                    <div>Green leafed trees</div><div style="margin-left:200px;color:red;font-weight: bold;">SALE</div>
-                    </div>
-                    <div class="rating-box">
-                      <span class="rating-star full-star"></span>
-                      <span class="rating-star full-star"></span>
-                      <span class="rating-star full-star"></span>
-                      <span class="rating-star full-star"></span>
-                      <span class="rating-star full-star"></span>
-                    </div>
-                    
-                    <p>&nbsp;</p>
-                    <div style="float:left;width:50%;">
-                      <div class="price-wrapper">
-                        <div class="price-slash"></div>
-                        <div class="price">$300</div>
-                      </div>
-                      <div class="price-discount">$300</div>
-                    </div>
-                    <div style="float:right;">
-                      <a class="product-heart"><span id="icon" class="material-symbols-outlined">&#xE87D;</span></a>
-                      <span class="material-symbols-outlined" id="wrapper-addtocart">&#xE854;</span>
-                    </div>
-                    
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature2.jpg" alt="">
-                  <figcaption>
-                    <p>landscape photography of brown mountain</p>
-                    <p>Photo by <a href="https://unsplash.com/@wilstewart3" target="_blank">Wil Stewart</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature3.jpg" alt="">
-                  <figcaption>
-                    <p>blue starry night</p>
-                    <p>Photo by <a href="https://unsplash.com/@ignitedit" target="_blank">Mark Basarab</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature4.jpg" alt="">
-                  <figcaption>
-                    <p>aerial island and beaches</p>
-                    <p>Photo by <a href="https://unsplash.com/@phiestyphung" target="_blank">Amanda Phung</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature5.jpg" alt="">
-                  <figcaption>
-                    <p>forest pathway</p>
-                    <p>Photo by <a href="https://unsplash.com/@elke_karin" target="_blank">Elke Karin Lugert</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature6.jpg" alt="">
-                  <figcaption>
-                    <p>photo of two black, white, and orange koi fish</p>
-                    <p>Photo by <a href="https://unsplash.com/@s_sagano" target="_blank">Sora Sagano</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature7.jpg" alt="">
-                  <figcaption>
-                    <p>landscape photo of brown mountain</p>
-                    <p>Photo by <a href="https://unsplash.com/@darrylbrian" target="_blank">Darryl Brian</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature8.jpg" alt="">
-                  <figcaption>
-                    <p>moon illustration</p>
-                    <p>Photo by <a href="https://unsplash.com/@metatzon297" target="_blank">Shin Roran</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature9.jpg" alt="">
-                  <figcaption>
-                    <p>bird's eye view of body of water</p>
-                    <p>Photo by <a href="https://unsplash.com/@timmossholder" target="_blank">Tim Mossholder</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature10.jpg" alt="">
-                  <figcaption>
-                    <p>high-angle photography of rural area</p>
-                    <p>Photo by <a href="https://unsplash.com/@stlobe" target="_blank">Steven Wong</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature11.jpg" alt="">
-                  <figcaption>
-                    <p>silhoutte of mountains during sunset</p>
-                    <p>Photo by <a href="https://unsplash.com/@von_co" target="_blank">Ivana Cajina</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature12.jpg" alt="">
-                  <figcaption>
-                    <p>bird's-eye view of mountain rang</p>
-                    <p>Photo by <a href="https://unsplash.com/@leni_eleni" target="_blank">Elena Prokofyeva</a></p>
-                  </figcaption>
-                </figure>
-              </li>
-            </ol>
-            <div style="margin-top:20px"> {% include 'footer.html'%} </div>
-          </div>
-        
+  <div class='breadcrumb-div'>
+    <ul class="arrows">
+      <li><a href="#"><span class="material-symbols-outlined">&#xE88A;</span>Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Clients</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+  <div class='breadcrumb-div'>Shop Bullet Vibrators</div>
+  <div class='breadcrumb-div'>
+    <div class="toolbar">
+      <div class="search-wrapper">
+        <input type="search" placeholder="Search for photos">
+        <div class="counter">
+          Total photos: <span>12</span>
+        </div>
+      </div>
+      <ul class="view-options">
+        <li class="zoom">
+          <input type="range" min="180" max="380" value="280">
+        </li>
+        <li class="show-grid active">
+          <button disabled>
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/grid-view.svg" alt="grid view">
+          </button>
+        </li>
+        <li class="show-list">
+          <button>
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/list-view.svg" alt="list view">
+          </button>
+        </li>
+      </ul>
+    </div><!--end toolbar-->
+  </div>
+  <div class='breadcrumb-div'>
+    <ol class="image-list grid-view">
+      <li>
+        <figure>
+          <a href="{{ url_for('product_info') }}">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature1.jpg" alt="">
+          </a>
+          <figcaption>
+            <div style="display:flex;">
+              <div>Green leafed trees</div>
+              <div style="margin-left:200px;color:red;font-weight: bold;">SALE</div>
+            </div>
+            <div class="rating-box">
+              <span class="rating-star full-star"></span>
+              <span class="rating-star full-star"></span>
+              <span class="rating-star full-star"></span>
+              <span class="rating-star full-star"></span>
+              <span class="rating-star full-star"></span>
+            </div>
+
+            <p>&nbsp;</p>
+            <div style="float:left;width:50%;">
+              <div class="price-wrapper">
+                <div class="price-slash"></div>
+                <div class="price">$300</div>
+              </div>
+              <div class="price-discount">$300</div>
+            </div>
+            <div style="float:right;">
+              <a class="product-heart"><span id="icon" class="material-symbols-outlined">&#xE87D;</span></a>
+              <span class="material-symbols-outlined" id="wrapper-addtocart">&#xE854;</span>
+            </div>
+
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature2.jpg" alt="">
+          <figcaption>
+            <p>landscape photography of brown mountain</p>
+            <p>Photo by <a href="https://unsplash.com/@wilstewart3" target="_blank">Wil Stewart</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature3.jpg" alt="">
+          <figcaption>
+            <p>blue starry night</p>
+            <p>Photo by <a href="https://unsplash.com/@ignitedit" target="_blank">Mark Basarab</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature4.jpg" alt="">
+          <figcaption>
+            <p>aerial island and beaches</p>
+            <p>Photo by <a href="https://unsplash.com/@phiestyphung" target="_blank">Amanda Phung</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature5.jpg" alt="">
+          <figcaption>
+            <p>forest pathway</p>
+            <p>Photo by <a href="https://unsplash.com/@elke_karin" target="_blank">Elke Karin Lugert</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature6.jpg" alt="">
+          <figcaption>
+            <p>photo of two black, white, and orange koi fish</p>
+            <p>Photo by <a href="https://unsplash.com/@s_sagano" target="_blank">Sora Sagano</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature7.jpg" alt="">
+          <figcaption>
+            <p>landscape photo of brown mountain</p>
+            <p>Photo by <a href="https://unsplash.com/@darrylbrian" target="_blank">Darryl Brian</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature8.jpg" alt="">
+          <figcaption>
+            <p>moon illustration</p>
+            <p>Photo by <a href="https://unsplash.com/@metatzon297" target="_blank">Shin Roran</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature9.jpg" alt="">
+          <figcaption>
+            <p>bird's eye view of body of water</p>
+            <p>Photo by <a href="https://unsplash.com/@timmossholder" target="_blank">Tim Mossholder</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature10.jpg" alt="">
+          <figcaption>
+            <p>high-angle photography of rural area</p>
+            <p>Photo by <a href="https://unsplash.com/@stlobe" target="_blank">Steven Wong</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature11.jpg" alt="">
+          <figcaption>
+            <p>silhoutte of mountains during sunset</p>
+            <p>Photo by <a href="https://unsplash.com/@von_co" target="_blank">Ivana Cajina</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/unsplash_nature12.jpg" alt="">
+          <figcaption>
+            <p>bird's-eye view of mountain rang</p>
+            <p>Photo by <a href="https://unsplash.com/@leni_eleni" target="_blank">Elena Prokofyeva</a></p>
+          </figcaption>
+        </figure>
+      </li>
+    </ol>
+    <div style="margin-top:20px"> {% include 'footer.html'%} </div>
+  </div>
+
 </div>
 
 {% endblock %}

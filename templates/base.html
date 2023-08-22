@@ -11,10 +11,10 @@
     <link href="{{ url_for('static', path='/css1/main.css') }}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-
     <link id="favicon" rel="icon" type="image/x-icon" href="static/images/favicon.ico">
     <script src="{{ url_for('static', path='/js/drop_down.js') }}"></script>
     <script src="{{ url_for('static', path='/js/mega_menu.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/toast.js') }}"></script>
     <script src="{{ url_for('static', path='/js/toast.js') }}"></script>
     <style>
         #imgContainer {
@@ -104,7 +104,7 @@
                 $(".slide_cart").fadeIn(0).animate({ marginRight: "0px" }, 370),
                     $(".slide_cart_grid").fadeIn(500);
             });
-           
+        
 
             $(".slide_cart_close").click(function () {
                 var navwidth = ($(".slide_cart").width());
@@ -117,35 +117,35 @@
                 //alert($("#icon"));
             });
             $('#mydiv2').click(function (data) {
-               //var arg = $(data).attr('data-arg');
-               console.log(data.currentTarget)
+                //var arg = $(data).attr('data-arg');
+                console.log(data.currentTarget)
                 console.log(data.currentTarget['data-arg']);
             });
 
-            $("#mydiv").on("click", function(){
+            $("#mydiv").on("click", function () {
                 var dataId = $(this).attr("data-arg");
                 //var datai =  product-details-c1.attr("id");
-                var t = '#'+dataId;
+                var t = '#' + dataId;
                 console.log(dataId);
                 //alert("The data-id of clicked item is: " + dataId);
                 //$(this).parent().remove();
-                
+
                 $.ajax({
-                    url: "/api/home" ,
+                    url: "/api/home",
                     type: "get",
                     contentType: "application/json",
-                    success: function(data) {
+                    success: function (data) {
                         console.log(data)
                         console.log("success");
                         $(t).remove();
-                },
-                
+                    },
+
                 });
-                
+
                 //
             });
-            $("#wrapper-addtocart").on("click", function(){
-                var counter = parseInt($(".count").text()) +1;
+            $("#wrapper-addtocart").on("click", function () {
+                var counter = parseInt($(".count").text()) + 1;
 
                 $('.count').html(counter);
                 //alert( counter);
@@ -157,7 +157,7 @@
                     duration: 5000
                 });
             });
-            $(".product-heart").on("click", function(){
+            $(".product-heart").on("click", function () {
                 toast({
                     title: "Save item",
                     message: "Your favorite item was added.",
@@ -165,8 +165,24 @@
                     duration: 5000
                 });
             });
-            
+
         });
+        function increaseValue(button, limit) {
+            const numberInput = button.parentElement.querySelector('.number');
+            var value = parseInt(numberInput.innerHTML, 10);
+            if (isNaN(value)) value = 0;
+            if (limit && value >= limit) return;
+            numberInput.innerHTML = value + 1;
+        }
+
+
+        function decreaseValue(button) {
+            const numberInput = button.parentElement.querySelector('.number');
+            var value = parseInt(numberInput.innerHTML, 10);
+            if (isNaN(value)) value = 0;
+            if (value < 1) return;
+            numberInput.innerHTML = value - 1;
+        }
         /*
         window.onload = (event) => {
             gsap.set('.motiv img', { xPercent: -50, yPercent: -50 })
@@ -208,21 +224,7 @@
 
 <body>
     <div id="toast"></div>
-    <div class="slide_cart">
-        <div class ="slide_cart_grid">
-            <div class="slide_cart_title">Cart&nbsp;(1 items)</div>
-            <div class="slide_cart_close">Close</div>
-        </div>
-        <!--
-        <div class="close_navigation1">
-            <div style="font-size:20px;">Close</div>
-        </div>
-        <div style="position:relative">
-            fffff
-        </div>
-        -->
 
-    </div>
     <div class="holy-grail-grid">
         <div class="free-shipping">
             <div class="bandeau">
@@ -278,14 +280,14 @@
                     <li><a href="#">SAVE ITEMS&nbsp;<i class="far fa-heart"></i></a></li>
                     <li><a href="#">ACCOUNT&nbsp; <i class="far fa-user" aria-hidden="true"></i></a></li>
                     <li><a href="#" class="shopping_cart">CART&nbsp;</a>
-                        <span style="display:inline-block;margin-top:15px;"> 
+                        <span style="display:inline-block;margin-top:15px;">
                             <div class="cart">
-                            <span class="count" style="display:none">0</span>
-                            <!--   <span class="count">1</span> -->
-                            <i class="material-symbols-outlined">shopping_cart</i>
-                          </div>
+                                <span class="count" style="display:none">0</span>
+                                <!--   <span class="count">1</span> -->
+                                <i class="material-symbols-outlined">shopping_cart</i>
+                            </div>
                         </span>
-                           
+
                         </a>
                     </li>
 
@@ -477,6 +479,7 @@
         </header>
         <main class="main-content">
 
+
             {% block content %} {% endblock %}
 
         </main>
@@ -484,20 +487,31 @@
     </div>
     <!--heart-->
     <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14.4167 1.87498C15.4583 1.87498 16.4583 2.29165 17.2083 3.04165C18.75 4.58331 18.75 7.08331 17.2083 8.58331L16.75 9.04165L10 15.7916L3.25 9.04165L2.83333 8.58331C1.29167 7.04165 1.29167 4.54165 2.83333 3.04165C3.58333 2.29165 4.58333 1.87498 5.625 1.87498C6.66667 1.87498 7.66667 2.29165 8.41667 3.04165L8.875 3.45831L10.0417 4.58331L11.2083 3.45831L11.6667 3.04165C12.375 2.29165 13.3333 1.87498 14.4167 1.87498ZM14.4167 0.208313C13 0.208313 11.5417 0.74998 10.4583 1.83331L10 2.24998L9.54167 1.83331C8.45833 0.74998 7 0.208313 5.58333 0.208313C4.16667 0.208313 2.75 0.74998 1.625 1.83331C-0.541667 3.99998 -0.541667 7.58331 1.625 9.74998L2.08333 10.2083L9.41667 17.5416C9.58333 17.7083 9.79167 17.7916 10 17.7916C10.2083 17.7916 10.4167 17.7083 10.5833 17.5416L17.9167 10.2083L18.375 9.74998C20.5417 7.58331 20.5417 3.99998 18.375 1.83331C17.25 0.74998 15.8333 0.208313 14.4167 0.208313Z" fill="black"></path>
+        <path
+            d="M14.4167 1.87498C15.4583 1.87498 16.4583 2.29165 17.2083 3.04165C18.75 4.58331 18.75 7.08331 17.2083 8.58331L16.75 9.04165L10 15.7916L3.25 9.04165L2.83333 8.58331C1.29167 7.04165 1.29167 4.54165 2.83333 3.04165C3.58333 2.29165 4.58333 1.87498 5.625 1.87498C6.66667 1.87498 7.66667 2.29165 8.41667 3.04165L8.875 3.45831L10.0417 4.58331L11.2083 3.45831L11.6667 3.04165C12.375 2.29165 13.3333 1.87498 14.4167 1.87498ZM14.4167 0.208313C13 0.208313 11.5417 0.74998 10.4583 1.83331L10 2.24998L9.54167 1.83331C8.45833 0.74998 7 0.208313 5.58333 0.208313C4.16667 0.208313 2.75 0.74998 1.625 1.83331C-0.541667 3.99998 -0.541667 7.58331 1.625 9.74998L2.08333 10.2083L9.41667 17.5416C9.58333 17.7083 9.79167 17.7916 10 17.7916C10.2083 17.7916 10.4167 17.7083 10.5833 17.5416L17.9167 10.2083L18.375 9.74998C20.5417 7.58331 20.5417 3.99998 18.375 1.83331C17.25 0.74998 15.8333 0.208313 14.4167 0.208313Z"
+            fill="black"></path>
     </svg>
-    <svg width="24" height="24" viewBox="-1 -1 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="oo-hdr-searchbutton__searchopen">
-        <path d="M23.707 22.293L17.7415 16.3275C19.152 14.6035 20 12.401 20 10C20 4.477 15.523 0 10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C12.401 20 14.6035 19.152 16.3275 17.7415L22.293 23.707L23.707 22.293ZM10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18Z" fill="black"></path>
+    <svg width="24" height="24" viewBox="-1 -1 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"
+        class="oo-hdr-searchbutton__searchopen">
+        <path
+            d="M23.707 22.293L17.7415 16.3275C19.152 14.6035 20 12.401 20 10C20 4.477 15.523 0 10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C12.401 20 14.6035 19.152 16.3275 17.7415L22.293 23.707L23.707 22.293ZM10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18Z"
+            fill="black"></path>
     </svg>
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 13C15.59 13 18.5 10.09 18.5 6.5C18.5 2.91 15.59 0 12 0C8.41 0 5.5 2.91 5.5 6.5C5.5 10.09 8.41 13 12 13ZM12 2C14.4815 2 16.5 4.0185 16.5 6.5C16.5 8.9815 14.4815 11 12 11C9.5185 11 7.5 8.9815 7.5 6.5C7.5 4.0185 9.5185 2 12 2Z" fill="black"></path>
-        <path d="M17.2175 15H6.7825C3.0365 15 0 18.492 0 22.8V23C0 23.5525 0.4475 24 1 24H23C23.5525 24 24 23.5525 24 23V22.8C24 18.492 20.9635 15 17.2175 15ZM2.0455 22C2.368 19.179 4.3695 17 6.783 17H17.218C19.6315 17 21.633 19.179 21.9555 22H2.0455Z" fill="black"></path>
+        <path
+            d="M12 13C15.59 13 18.5 10.09 18.5 6.5C18.5 2.91 15.59 0 12 0C8.41 0 5.5 2.91 5.5 6.5C5.5 10.09 8.41 13 12 13ZM12 2C14.4815 2 16.5 4.0185 16.5 6.5C16.5 8.9815 14.4815 11 12 11C9.5185 11 7.5 8.9815 7.5 6.5C7.5 4.0185 9.5185 2 12 2Z"
+            fill="black"></path>
+        <path
+            d="M17.2175 15H6.7825C3.0365 15 0 18.492 0 22.8V23C0 23.5525 0.4475 24 1 24H23C23.5525 24 24 23.5525 24 23V22.8C24 18.492 20.9635 15 17.2175 15ZM2.0455 22C2.368 19.179 4.3695 17 6.783 17H17.218C19.6315 17 21.633 19.179 21.9555 22H2.0455Z"
+            fill="black"></path>
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24" fill="none">
-        <path d="M19.9321 7.815C19.8372 6.78 18.9822 6 17.9422 6H15.8521V5C15.8521 2.245 13.6072 0 10.8521 0C8.09715 0 5.85215 2.245 5.85215 5V6H3.76215C2.72215 6 1.86715 6.78 1.77215 7.815L0.512149 21.265C0.442149 21.965 0.677149 22.665 1.15215 23.185C1.62215 23.7 2.29715 24 2.99715 24H18.7071C19.4072 24 20.0821 23.7 20.5521 23.185C21.0271 22.665 21.2572 21.965 21.1922 21.265L19.9321 7.815ZM7.85215 5C7.85215 3.345 9.19715 2 10.8521 2C12.5071 2 13.8521 3.345 13.8521 5V6H7.85215V5ZM19.0721 21.835C19.0171 21.895 18.8972 22 18.7071 22H2.99715C2.80715 22 2.68715 21.895 2.62715 21.835C2.57215 21.775 2.48215 21.645 2.50215 21.455L2.73215 19L2.91715 17L3.76215 8H5.85215V10H7.85215V8H13.8521V10H15.8521V8H17.9422L18.7871 17L18.9721 19L19.2022 21.455C19.2222 21.645 19.1321 21.775 19.0721 21.835Z" fill="black"></path>
+        <path
+            d="M19.9321 7.815C19.8372 6.78 18.9822 6 17.9422 6H15.8521V5C15.8521 2.245 13.6072 0 10.8521 0C8.09715 0 5.85215 2.245 5.85215 5V6H3.76215C2.72215 6 1.86715 6.78 1.77215 7.815L0.512149 21.265C0.442149 21.965 0.677149 22.665 1.15215 23.185C1.62215 23.7 2.29715 24 2.99715 24H18.7071C19.4072 24 20.0821 23.7 20.5521 23.185C21.0271 22.665 21.2572 21.965 21.1922 21.265L19.9321 7.815ZM7.85215 5C7.85215 3.345 9.19715 2 10.8521 2C12.5071 2 13.8521 3.345 13.8521 5V6H7.85215V5ZM19.0721 21.835C19.0171 21.895 18.8972 22 18.7071 22H2.99715C2.80715 22 2.68715 21.895 2.62715 21.835C2.57215 21.775 2.48215 21.645 2.50215 21.455L2.73215 19L2.91715 17L3.76215 8H5.85215V10H7.85215V8H13.8521V10H15.8521V8H17.9422L18.7871 17L18.9721 19L19.2022 21.455C19.2222 21.645 19.1321 21.775 19.0721 21.835Z"
+            fill="black"></path>
     </svg>
 
-   
+
 </body>
 
 </html>
