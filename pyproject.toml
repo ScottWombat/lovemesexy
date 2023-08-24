@@ -26,6 +26,7 @@ run_upload1 = "app.utils.commands:mongodb_bulk_upload"
 run_upload = "app.utils.commands:upload"
 db-query = "app.utils.commands:mongodb_query"
 find_all = "app.utils.commands:mongodb_find_all"
+click_linkedlist = "app.utils.linked_list.linkedList:run"
 
 [build-system]
 requires = ["poetry-core"]
